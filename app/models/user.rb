@@ -39,7 +39,9 @@ class User
   ## Required for devise_token_auth
   field :provider, type: String, default: "email"
   field :uid, type: String, default: ""
-  field :tokens, type: String
+  field :tokens, type: Hash, default: {}
+
+  has_many :messages
 
   include DeviseTokenAuth::Concerns::User
 end
