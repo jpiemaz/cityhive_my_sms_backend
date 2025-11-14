@@ -30,6 +30,7 @@ gem "rack-cors"
 gem "mongoid"
 gem "devise"
 gem "devise_token_auth"
+gem "twilio-ruby"
 
 group :development, :test do
   gem "pry"
