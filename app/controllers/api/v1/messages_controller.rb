@@ -12,7 +12,8 @@ module Api
 
       def create
         message = current_user.messages.new(message_params)
-        if message.save!
+        response = message.send_to_twilio
+        if response.status == "queued" && message.save!
           render json: message, status: :created
         else
           render json: { errors: message.errors.full_messages }, status: :unprocessable_entity

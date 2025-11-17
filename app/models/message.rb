@@ -5,12 +5,14 @@ class Message
   field :text, type: String
   belongs_to :user
 
-  def send_to_twilio(text, phone_from = "+18332611586", phone_to = "+18777804236")
-    client = Twilio::REST::Client.new(account_sid, auth_token)
+  ## this would come from the current_user if app/twilio account were real
+  def send_to_twilio(phone_from = "+18332611586")
+    client = Twilio::REST::Client.new(ENV.fetch("TWILIO_ACCOUNT_SID"), ENV.fetch("TWILIO_AUTH_TOKEN"))
     client.messages.create(
       body: text,
-      to: phone_to, # Text this number
-      from: phone_from, # From a valid Twilio number
+      ## this would come from the phone_number field
+      to: "+18777804236",
+      from: phone_from,
     )
   end
 end

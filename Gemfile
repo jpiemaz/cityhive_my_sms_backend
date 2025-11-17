@@ -31,6 +31,7 @@ gem "mongoid"
 gem "devise"
 gem "devise_token_auth"
 gem "twilio-ruby"
+gem "dotenv-rails"
 
 group :development, :test do
   gem "pry"
