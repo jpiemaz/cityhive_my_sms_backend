@@ -5,20 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Backend for MySMS project, provides api endpoints to injest frontend messages, save to a mongoid database, and send messages to twilio. Uses devise_token_auth to create and authenticate users
 
-* System dependencies
+* Running on the newest versions of Mongoid, Rails, Ruby
 
-* Configuration
+* Runs with `rails s`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
